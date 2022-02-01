@@ -52,13 +52,37 @@
 // var x = checkMinAge(employees);
 // console.log(x);
 
-let arr = [1, 2, 3, 4]
-const multiply = (...arr) => {
-    let res = 1;
-    let i = 1;
-    for(i of arr) {
-        res = res * i;
-    }
-    return res;
+// let arr = [1, 2, 3, 4]
+// const multiply = (...arr) => {
+//     let res = 1;
+//     let i = 1;
+//     for(i of arr) {
+//         res = res * i;
+//     }
+//     return res;
+// }
+// console.log(multiply(5, ...arr));
+
+// let arr = [1, 2, 3, 4, 5]
+// let fun = () => {
+//     var mul = 1;
+//     return (i) => {
+//         mul = mul * i;
+//         return mul;
+//     }
+// }
+// let multiply = fun();
+// let res = arr.map(
+//     num => multiply(num)
+// );
+// console.log(res);
+
+const fs = require("fs");
+class fileOpp {
+  static readFile = (fileName = "sample.txt") => {
+    fs.readFile(fileName, "utf-8", (err, data) => {
+      console.log(data);
+    });
+  };
 }
-console.log(multiply(5, ...arr));
+module.exports = fileOpp.readFile;
