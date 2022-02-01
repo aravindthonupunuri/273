@@ -77,12 +77,43 @@
 // );
 // console.log(res);
 
-const fs = require("fs");
-class fileOpp {
-  static readFile = (fileName = "sample.txt") => {
-    fs.readFile(fileName, "utf-8", (err, data) => {
-      console.log(data);
-    });
-  };
+// const fs = require("fs");
+// class fileOpp {
+//   static readFile = (fileName = "sample.txt") => {
+//     fs.readFile(fileName, "utf-8", (err, data) => {
+//       console.log(data);
+//     });
+//   };
+// }
+// module.exports = fileOpp.readFile;
+
+class School {
+    constructor(Name, address, phone) {
+        this.Name = Name;
+        this.address = address;
+        this.phone = phone;
+    }
+    print = () => {
+        console.log(`School details are ${this.Name} ${this.address} ${this.phone}`)
+    }
 }
-module.exports = fileOpp.readFile;
+
+class Section extends School {
+    constructor(Name, address, phone, SectionName, teacher, age) {
+        super(Name, address, phone);
+        this.SectionName = SectionName;
+        this.teacher = teacher;
+        this.age = age;
+    }
+    print = () => {
+        console.log(`Section details are ${this.SectionName} ${this.teacher} ${this.age}`)
+    }
+}
+
+const someschool = new School("school name", "school address", "school phone");
+const somesection = new Section("school name", "school address", "school phone", "section name", "teacher", "23");
+someschool.print();
+somesection.print();
+const anothersection = new Section();
+Object.assign(anothersection, somesection);
+console.log(anothersection.Name);
