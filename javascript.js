@@ -31,23 +31,34 @@
 // console.log(employeeDetails);
 // console.log((employeeDetails.names)[1]);
 
-let employees = {
-  a: 40,
-  b: 30,
-  c: 20,
-  d: 50,
-};
+// let employees = {
+//   a: 40,
+//   b: 30,
+//   c: 20,
+//   d: 50,
+// };
 
-const checkMinAge = (employees) => {
-  let minAge = 100;
-  let res = null;
-  for (const [name, age] of Object.entries(employees)) {
-    if (minAge > age) {
-      minAge = age;
-      res = name;
+// const checkMinAge = (employees) => {
+//   let minAge = 100;
+//   let res = null;
+//   for (const [name, age] of Object.entries(employees)) {
+//     if (minAge > age) {
+//       minAge = age;
+//       res = name;
+//     }
+//   }
+//   return res;
+// };
+// var x = checkMinAge(employees);
+// console.log(x);
+
+let arr = [1, 2, 3, 4]
+const multiply = (...arr) => {
+    let res = 1;
+    let i = 1;
+    for(i of arr) {
+        res = res * i;
     }
-  }
-  return res;
-};
-var x = checkMinAge(employees);
-console.log(x);
+    return res;
+}
+console.log(multiply(5, ...arr));
