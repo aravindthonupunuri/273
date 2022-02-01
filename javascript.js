@@ -87,33 +87,41 @@
 // }
 // module.exports = fileOpp.readFile;
 
-class School {
-    constructor(Name, address, phone) {
-        this.Name = Name;
-        this.address = address;
-        this.phone = phone;
-    }
-    print = () => {
-        console.log(`School details are ${this.Name} ${this.address} ${this.phone}`)
-    }
-}
+// class School {
+//     constructor(Name, address, phone) {
+//         this.Name = Name;
+//         this.address = address;
+//         this.phone = phone;
+//     }
+//     print = () => {
+//         console.log(`School details are ${this.Name} ${this.address} ${this.phone}`)
+//     }
+// }
 
-class Section extends School {
-    constructor(Name, address, phone, SectionName, teacher, age) {
-        super(Name, address, phone);
-        this.SectionName = SectionName;
-        this.teacher = teacher;
-        this.age = age;
-    }
-    print = () => {
-        console.log(`Section details are ${this.SectionName} ${this.teacher} ${this.age}`)
-    }
-}
+// class Section extends School {
+//     constructor(Name, address, phone, SectionName, teacher, age) {
+//         super(Name, address, phone);
+//         this.SectionName = SectionName;
+//         this.teacher = teacher;
+//         this.age = age;
+//     }
+//     print = () => {
+//         console.log(`Section details are ${this.SectionName} ${this.teacher} ${this.age}`)
+//     }
+// }
 
-const someschool = new School("school name", "school address", "school phone");
-const somesection = new Section("school name", "school address", "school phone", "section name", "teacher", "23");
-someschool.print();
-somesection.print();
-const anothersection = new Section();
-Object.assign(anothersection, somesection);
-console.log(anothersection.Name);
+// const someschool = new School("school name", "school address", "school phone");
+// const somesection = new Section("school name", "school address", "school phone", "section name", "teacher", "23");
+// someschool.print();
+// somesection.print();
+// const anothersection = new Section();
+// Object.assign(anothersection, somesection);
+// console.log(anothersection.Name);
+
+const axios = require("axios");
+axios
+  .get("https://api.github.com/users/aravindthonupunuri")
+  .then((response) => console.log(response.data))
+  .catch((error) => console.log(error));
+
+  
