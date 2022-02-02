@@ -118,10 +118,27 @@
 // Object.assign(anothersection, somesection);
 // console.log(anothersection.Name);
 
-const axios = require("axios");
-axios
-  .get("https://api.github.com/users/aravindthonupunuri")
-  .then((response) => console.log(response.data))
-  .catch((error) => console.log(error));
+// const axios = require("axios");
+// axios
+//   .get("https://api.github.com/users/aravindthonupunuri")
+//   .then((response) => console.log(response.data))
+//   .catch((error) => console.log(error));
 
-  
+let fun = function (state, phone) {
+    console.log(this.name, this.age, state, phone)
+} 
+let obj1 = {
+    name: "aravind",
+    age: 23
+}
+let obj2 = {
+    name: "thonups",
+    age: 24
+}
+fun.call(obj1, "Telangana", 9777);
+fun.apply(obj2, ["Telangana", 9777]);
+let newFun = fun.bind(obj1, "Telangana", 9777);
+newFun();
+
+
+
